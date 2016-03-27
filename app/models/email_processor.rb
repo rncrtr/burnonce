@@ -1,15 +1,14 @@
 class EmailProcessor
   def initialize(email)
-    @email = email
+    @to = email.to.first[:email]
+    @from = email.from[:email]
+    @body = email.body
+    @subject = email.subject
   end
 
   def process
-    # all of your application-specific code here - creating models,
-    # processing reports, etc
-
-    # here's an example of model creation
     log_dir = '/Users/shakycode/Dropbox/burnonce'
     log = Logger.new("#{log_dir}/griddler#{Time.now.strftime("%m-%d-%Y")}.log")
-    log.info "email: #{@email.body} #{@email.from} #{@email.subject}"
+    log.info "body: #{@body} from: #{@from} to: #{@to} subject: #{@subject}"
   end
 end

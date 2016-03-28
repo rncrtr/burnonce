@@ -1,8 +1,7 @@
 class EmailsController < ApplicationController
 
   def index
-    #user messages protect with devise
-    #create another method called burn_it which updates the email address for the user
+    @emails = current_user.emails.order("created_at DESC")
   end
 
   def burn_it

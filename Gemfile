@@ -31,6 +31,13 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 # fancy icons
 gem 'font-awesome-rails'
+# parse and display html
+gem 'html-pipeline'
+gem 'github-markdown'
+gem 'gemoji'
+gem 'sanitize'
+gem 'escape_utils'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

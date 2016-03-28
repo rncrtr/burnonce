@@ -1,3 +1,3 @@
 <%= @email.subject %></br>
 <%= @email.to_email %></br>
-<%= @email.body %></br>
+<%= htmlify(@email.body) %></br>

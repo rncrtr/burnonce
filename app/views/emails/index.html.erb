@@ -18,5 +18,5 @@
   <li>Display the current_user burn_email and a js copy link to copy to clipboard</li>
 </ul>
 <% @emails.each do |e| %>
-<%= e.from_email %> <%= e.to_email %> <%= e.subject %> <%= e.body %></br>
+<%= e.from_email %> <%= e.to_email %> <%= link_to e.subject, email_path(e.id) %> </br>
 <% end %>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   mount_griddler
+  resources :emails
   root 'emails#index'
   #post '/email_processor' => 'emails#process'
   # The priority is based upon order of creation: first created -> highest priority.

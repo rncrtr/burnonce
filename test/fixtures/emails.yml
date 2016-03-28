@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  from_email: MyString
+  to_email: MyString
+  subject: MyString
+  body: MyText
+
+two:
+  user_id: 1
+  from_email: MyString
+  to_email: MyString
+  subject: MyString
+  body: MyText

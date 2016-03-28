@@ -27,6 +27,10 @@ gem 'griddler'
 gem 'griddler-sendgrid'
 # handle authentication
 gem 'devise'
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+# fancy icons
+gem 'font-awesome-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

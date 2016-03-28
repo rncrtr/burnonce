@@ -11,6 +11,20 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function() {
+  setTimeout(function() {
+    $(".alert-fade").fadeOut("slow", function() {
+      $(this).remove();
+    })
+  }, 4500 );
+});
+
+$(document).on('ready', function(event) {
+  // initialize persistent state
+  Turbolinks.enableProgressBar();
+//  Turbolinks.ProgressBar.enable();
+});

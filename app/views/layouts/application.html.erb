@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Burnonce</title>
+  <title>burnonce.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/header' %>
 
-<%= yield %>
+  <div class="container-fluid">
+    <%= flash_messages %>
 
+
+    <%= yield %>
+
+    <footer>
+      <div class="pull-left">
+        Made with <%= fa_icon 'heart' %> by <%= link_to "ShakyCode", "http://shakycode.com" %>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

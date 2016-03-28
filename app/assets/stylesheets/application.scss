@@ -1,0 +1,53 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ $well-bg: #FFFFFF;
+ $navbar-default-brand-color: #2ecc71;
+ $navbar-default-bg: white;
+ $brand-primary: #2ecc71;
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+ @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+ html.turbolinks-progress-bar::before {
+   background-color: red !important;
+   height: 3px !important;
+ }
+
+ body {
+   font-family: "Roboto", sans-serif;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+  }
+  // For giving the wells a bit more pop color
+  .blurb {
+    background-color: red;
+  }
+  footer {
+    box-shadow: 0 0 1px rgba(0,0,0,0.15);
+    font-size: 14px;
+    font-weight: 700;
+    height: 70px;
+    line-height: 70px;
+    margin: 70px 0px 0px 0px;
+    padding: 0px 20px;
+    text-transform: uppercase;
+  }

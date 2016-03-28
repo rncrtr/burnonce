@@ -15,5 +15,5 @@
     payments... or just a stripe donation window with my api creds... yeah that...</li>
 </ul>
 <% @emails.each do |e| %>
-<%= e.from_email %> <%= e.to_email %> <%= e.subject %></br>
+<%= e.from_email %> <%= e.to_email %> <%= e.subject %> <%= e.body %></br>
 <% end %>

@@ -13,6 +13,8 @@
   <li>Still need to decide if I really want to have someone send mail outbound.... can i charge for this?</li>
   <li>Stripe integration for pro level?  or do I just make this freeware with a donation button.. look into paypal gem for accepting
     payments... or just a stripe donation window with my api creds... yeah that...</li>
+  <li>Set burn_email field on user</li>
+  <li>Setup devise for email/username</li>
 </ul>
 <% @emails.each do |e| %>
 <%= e.from_email %> <%= e.to_email %> <%= e.subject %> <%= e.body %></br>

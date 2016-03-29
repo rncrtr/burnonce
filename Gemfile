@@ -37,6 +37,8 @@ gem 'github-markdown'
 gem 'gemoji'
 gem 'sanitize'
 gem 'escape_utils'
+#Use faker to generate email addresses
+gem 'faker'
 
 
 # Use ActiveModel has_secure_password

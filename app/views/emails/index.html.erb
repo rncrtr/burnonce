@@ -1,24 +1,4 @@
-<h3>User story</h3>
-
-<ul>
-  <li>User signs up for the service and receives a burn email addy</li>
-  <li>User has one day to use the email address and receive emails</li>
-  <li>Worker goes in every 24 hours from last_burn_generation or update_at field on user, generates
-    new burn email addy, and emails the user letting them know</li>
-  <li>Give the user a button on their messages page that allows them to burn it prematurely, how many times do we allow burns?</li>
-  <li>Do we let the user reply using sendgrid?  Or is this just a one way app? design and architechture decision</li>
-  <li>In the emails controller/index view users can read messages that are inbound.  Show a list of messages
-    and they can click on them to view the full message, or they can delete the messages.  Oh and by the way, all messages
-    get wiped out every 24 hours along with the burn, and also associate message wipeout with the burn it button</li>
-  <li>Still need to decide if I really want to have someone send mail outbound.... can i charge for this?</li>
-  <li>Stripe integration for pro level?  or do I just make this freeware with a donation button.. look into paypal gem for accepting
-    payments... or just a stripe donation window with my api creds... yeah that...</li>
-  <li>Set burn_email field on user</li>
-  <li>Setup devise for email/username</li>
-  <li>Display the current_user burn_email and a js copy link to copy to clipboard</li>
-  <li>Add write search method to search subject/body/from fields in message and display query results</li>
-
-</ul>
+Your burn email is: <%= current_user.email %>
 <% unless @emails.empty? %>
 <%= link_to 'Clear Inbox', destroy_all_emails_path, :class => 'badge', :method => :put, data: { confirm: 'Are you sure? Messages cannot be recovered.' } %></br>
 <% end %>

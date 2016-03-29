@@ -7,9 +7,9 @@ class EmailProcessor
   end
 
   def process
-    log_dir = '/Users/shakycode/Dropbox/burnonce'
-    log = Logger.new("#{log_dir}/griddler#{Time.now.strftime("%m-%d-%Y")}.log")
-    log.info "body: #{@body} from: #{@from} to: #{@to} subject: #{@subject}"
+    #log_dir = '/Users/shakycode/Dropbox/burnonce'
+    #log = Logger.new("#{log_dir}/griddler#{Time.now.strftime("%m-%d-%Y")}.log")
+    #log.info "body: #{@body} from: #{@from} to: #{@to} subject: #{@subject}"
     u = User.find_by(email: @to)
     e = u.emails.create!(user_id: "1", from_email: @from, to_email: @to, subject: @subject, body: @body)
   end

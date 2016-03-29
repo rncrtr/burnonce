@@ -14,6 +14,12 @@ class EmailsController < ApplicationController
     redirect_to emails_path, notice: "Message Deleted!"
   end
 
+  def destroy_all
+    current_user.emails.delete_all
+    redirect_to emails_path, notice: "All Messages Clear"
+  end
+
+
   def burn_it
      current_user.burn_email
      redirect_to emails_path, notice: "You now have a new email address, enjoy it for the day!"

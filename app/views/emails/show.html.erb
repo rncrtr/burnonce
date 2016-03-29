@@ -1,3 +1,4 @@
 <%= @email.subject %></br>
 <%= @email.to_email %></br>
 <%= htmlify(@email.body) %></br>
+<%= link_to 'Destroy', { action: :destroy, id: @email.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge' %>

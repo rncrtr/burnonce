@@ -5,6 +5,7 @@ Your burn email is: <%= current_user.burn_email %> <%= link_to 'Burn', burn_it_e
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Received</th>
       <th>From</th>
       <th>To</th>
       <th>Subject</th>
@@ -15,6 +16,7 @@ Your burn email is: <%= current_user.burn_email %> <%= link_to 'Burn', burn_it_e
   <tbody>
     <% @emails.each do |e| %>
       <tr>
+        <td><%= e.created_at.strftime("%m/%d/%y-%H:%M(UTC)") %></td>
         <td><%= e.from_email %></td>
         <td><%= e.to_email %></td>
         <td><%= link_to e.subject, email_path(e.id) %></td>

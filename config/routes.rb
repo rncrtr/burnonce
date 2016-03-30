@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :emails do
     collection do
       put 'destroy_all'
+      put 'burn_it'
     end
   end
   root 'emails#index'

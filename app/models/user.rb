@@ -21,7 +21,14 @@
 class User < ActiveRecord::Base
 
   has_many :emails
-  
+  after_create :generate_burn_email
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def generate_burn_email
+    chars = Array('a'..'z')
+    self.burn_email = Array.new(10) { chars.sample }.join + "@burnonce.xyz"
+    self.save
+  end
 end

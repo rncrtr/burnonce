@@ -1,5 +1,5 @@
 class EmailsController < ApplicationController
-
+  respond_to :html, :js
   def index
     @emails = current_user.emails.order("created_at DESC")
   end

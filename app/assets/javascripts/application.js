@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
+//= require clipboard
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
@@ -27,4 +29,11 @@ $(document).on('ready', function(event) {
   // initialize persistent state
   Turbolinks.enableProgressBar();
 //  Turbolinks.ProgressBar.enable();
+});
+
+$(document).ready(function(){
+
+  var clip = new Clipboard('.btn');
+  console.log(clip);
+
 });

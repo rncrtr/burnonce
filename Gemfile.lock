@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/shakycode/clipboard-rails.git
+  revision: e4316fab66f42b369da975c3b1e40a81172b320f
+  specs:
+    clipboard-rails (1.5.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -102,6 +108,9 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     json (1.8.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -203,6 +212,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (~> 3.3.6)
   byebug
+  clipboard-rails!
   coffee-rails (~> 4.1.0)
   devise
   escape_utils
@@ -215,6 +225,7 @@ DEPENDENCIES
   html-pipeline
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-turbolinks
   pg (~> 0.15)
   rails (= 4.2.6)
   sanitize

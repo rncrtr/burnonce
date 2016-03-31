@@ -39,6 +39,11 @@ gem 'sanitize'
 gem 'escape_utils'
 #Use faker to generate email addresses
 gem 'faker'
+#Clipboard js rails
+gem 'clipboard-rails', :github => "shakycode/clipboard-rails"
+#Deal with jquery and turbolinks
+gem 'jquery-turbolinks'
+
 
 
 # Use ActiveModel has_secure_password

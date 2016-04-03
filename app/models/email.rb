@@ -15,5 +15,13 @@
 class Email < ActiveRecord::Base
 
   belongs_to :user
-  
+
+  def self.search(search)
+  if search
+    where('from_email ILIKE ? OR subject ILIKE ? OR body ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+  else
+    all
+  end
+end
+
 end

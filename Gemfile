@@ -52,8 +52,10 @@ gem 'jquery-turbolinks'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-bundler', '~> 1.1.4'
+gem 'capistrano-rails', '~> 1.1.6'
+gem 'capistrano-rbenv', '~> 2.0', '>= 2.0.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

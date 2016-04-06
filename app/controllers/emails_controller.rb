@@ -5,7 +5,7 @@ class EmailsController < ApplicationController
   end
 
   def show
-    @email = Email.find(params[:id])
+    @email = current_user.emails.find(params[:id])
   end
 
   def destroy

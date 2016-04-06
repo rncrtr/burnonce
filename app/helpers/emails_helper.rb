@@ -10,6 +10,6 @@ module EmailsHelper
       HTML::Pipeline::EmailReplyFilter,
       HTML::Pipeline::SanitizationFilter
     ], pipeline_context
-    pipeline.call(body)[:output].to_s.html_safe
+    pipeline.call(body)[:output].to_s
   end
 end

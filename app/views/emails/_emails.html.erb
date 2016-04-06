@@ -1,4 +1,4 @@
-Your burn email is: <div id="burn_email"><%= current_user.burn_email %> Last burned: <%= current_user.last_burn.strftime("%m/%d/%y-%H:%M(UTC)") %></div>
+Your burn email is: <div id="burn_email"><%= current_user.burn_email %></div> Last burned: <%= current_user.last_burn.strftime("%m/%d/%y-%H:%M(UTC)") %>
 
 <button type="button" class="btn btn-primary btn-sm" data-clipboard-action="copy" data-clipboard-target="#burn_email">
     Copy Email Address

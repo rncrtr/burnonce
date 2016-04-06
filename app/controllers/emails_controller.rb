@@ -1,8 +1,7 @@
 class EmailsController < ApplicationController
   respond_to :html, :js
   def index
-    #@emails = current_user.emails.order("created_at DESC")
-    @emails = current_user.emails.search(params[:search])
+    @emails = current_user.emails.search(params[:search]).order("created_at DESC")
   end
 
   def show

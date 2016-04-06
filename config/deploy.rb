@@ -1,4 +1,4 @@
-set :application, 'myapp'
+set :application, 'burnonce'
 set :repo_url, 'git@github.com:shakycode/burnonce.git'
 
 set :deploy_to, '/home/deploy/burnonce'

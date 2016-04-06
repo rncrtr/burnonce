@@ -6,7 +6,8 @@ module EmailsHelper
       HTML::Pipeline::MarkdownFilter,
       HTML::Pipeline::AbsoluteSourceFilter,
       HTML::Pipeline::AutolinkFilter,
-      HTML::Pipeline::PlainTextInputFilter,
+      HTML::Pipeline::ImageMaxWidthFilter,
+      HTML::Pipeline::EmailReplyFilter,
       HTML::Pipeline::SanitizationFilter
     ], pipeline_context
     pipeline.call(body)[:output].to_s.html_safe

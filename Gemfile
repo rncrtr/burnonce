@@ -38,6 +38,7 @@ gem 'gemoji'
 gem 'sanitize'
 gem 'escape_utils'
 gem 'rinku'
+gem 'email_reply_parser'
 #Use faker to generate email addresses
 gem 'faker'
 #Clipboard js rails

@@ -1,0 +1,10 @@
+<div class="clearfix">
+	<div class="pull-right">
+	  <%= form_tag emails_path, :method => 'get', remote: true, :id => "email_search" do %>
+	  <p>
+	    <%= text_field_tag :search,  params[:search], :placeholder => 'From, Subject, Body', :class => 'input-large search-query' %>
+	    <%= submit_tag "Search", :name => nil, :class => 'btn btn-info btn-mini' %>
+	 <% end %>
+	  </p>
+	</div>
+</div>

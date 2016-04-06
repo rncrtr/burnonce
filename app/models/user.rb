@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   after_create :generate_burn_email
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
   validates :username, :presence => true, :uniqueness => {:case_sensitive => false}
 

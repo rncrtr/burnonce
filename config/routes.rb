@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   mount_griddler
   resources :emails do
@@ -7,6 +8,9 @@ Rails.application.routes.draw do
       put 'burn_it'
     end
   end
+  get 'pages/terms_of_service'
+  get 'pages/privacy_policy'
+  get 'pages/acceptable_use_policy'
   root 'emails#index'
   #post '/email_processor' => 'emails#process'
   # The priority is based upon order of creation: first created -> highest priority.

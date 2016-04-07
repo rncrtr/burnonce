@@ -21,6 +21,8 @@
 class User < ActiveRecord::Base
 
   has_many :emails
+  has_many :posts
+  has_many :comments
   after_create :generate_burn_email
 
   devise :database_authenticatable, :registerable,

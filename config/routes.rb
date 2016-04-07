@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       put 'burn_it'
     end
   end
+  resources :blog
   get 'pages/terms_of_service'
   get 'pages/privacy_policy'
   get 'pages/acceptable_use_policy'

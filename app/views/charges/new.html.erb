@@ -6,13 +6,13 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $1.00</span>
+      <span>Amount: $5.00</span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.application.secrets.stripe_publishable_key%>"
           data-description="Burnonce.com Donation"
-          data-amount="100"
+          data-amount="500"
           data-locale="auto"></script>
 <% end %>

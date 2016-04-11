@@ -1,0 +1,5 @@
+<%= form_for(@blog, url: '/blog') do |f| %>
+  <%= f.text_field :title %></br>
+  <%= f.text_area :body %></br>
+  <%= f.submit %>
+<% end %>

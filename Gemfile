@@ -47,6 +47,8 @@ gem 'clipboard-rails', :github => "shakycode/clipboard-rails"
 gem 'jquery-turbolinks'
 #Social sharing
 gem 'social-share-button'
+#Donations are costly
+gem 'stripe'
 
 
 

@@ -1,5 +1,5 @@
 class BlogController < ApplicationController
-  skip_before_filter :authenticate_user!, :only => [:index]
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
   before_action :disallow_user, :except => [:index, :show]
 
   def index

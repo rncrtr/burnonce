@@ -1,6 +1,6 @@
 set :application, 'burnonce'
 set :repo_url, 'git@github.com:shakycode/burnonce.git'
-
+set :branch, "master"
 set :deploy_to, '/home/deploy/burnonce'
 
 set :linked_files, %w{config/database.yml config/secrets.yml}

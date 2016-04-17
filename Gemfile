@@ -45,8 +45,6 @@ gem 'faker'
 gem 'clipboard-rails', :github => "shakycode/clipboard-rails"
 #Deal with jquery and turbolinks
 gem 'jquery-turbolinks'
-#Social sharing
-gem 'social-share-button'
 #Donations are costly
 gem 'stripe'
 

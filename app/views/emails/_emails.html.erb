@@ -12,9 +12,9 @@ Your burn email is: <div id="burn_email"><%= current_user.burn_email %></div> La
   <thead>
     <tr>
       <th>Received</th>
+      <th>Subject</th>
       <th>From</th>
       <th>To</th>
-      <th>Subject</th>
       <th>Controls</th>
     </tr>
   </thead>
@@ -23,9 +23,9 @@ Your burn email is: <div id="burn_email"><%= current_user.burn_email %></div> La
     <% @emails.each do |e| %>
       <tr>
         <td><%= e.created_at.strftime("%m/%d/%y-%H:%M(UTC)") %></td>
+        <td><%= link_to e.subject, email_path(e.id) %></td>
         <td><%= e.from_email %></td>
         <td><%= e.to_email %></td>
-        <td><%= link_to e.subject, email_path(e.id) %></td>
         <td><%= link_to 'Destroy', { action: :destroy, id: e.id }, method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'badge' %></td>
       </tr>
     <% end %>

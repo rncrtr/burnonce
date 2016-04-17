@@ -13,7 +13,13 @@ Rails.application.routes.draw do
   get 'pages/terms_of_service'
   get 'pages/privacy_policy'
   get 'pages/acceptable_use_policy'
-  root 'emails#index'
+  authenticated :user do
+    root to: "emails#index", as: :authenticated_root
+  end
+
+  unauthenticated do
+    root to: "welcome#index"
+  end
   #post '/email_processor' => 'emails#process'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require clipboard
-//= require social-share-button
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks

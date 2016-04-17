@@ -34,7 +34,7 @@ $(document).on('ready', function(event) {
 
 $(document).ready(function(){
 
-  var clip = new Clipboard('.btn');
+  var clip = new Clipboard('.copyemail');
   console.log(clip);
 
 });

@@ -1,20 +1,49 @@
-Your burn email is: <div id="burn_email"><%= current_user.burn_email %></div> Last burned: <%= current_user.last_burn.strftime("%m/%d/%y-%H:%M(UTC)") %>
+<div class="row">
+  <div class="col-md-3">
 
-<button type="button" class="btn btn-primary btn-sm" data-clipboard-action="copy" data-clipboard-target="#burn_email">
-    Copy Email Address
-</button>
+    <div class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" id="burn_email" value="<%= current_user.burn_email %>">
+          <div class="input-group-addon"><a href="#" rel="nofollow" class="copyemail" data-clipboard-action="copy" data-clipboard-target="#burn_email"><%= fa_icon "clipboard" %></a></div>
+        </div>
+      </div>
+    </div>
 
-<%= link_to 'Burn', burn_it_emails_path, :class => 'badge', :method => :put, data: { confirm: 'Are you sure you want to burn your email address?' } %>
-<% unless @emails.empty? %>
-<%= link_to 'Clear Inbox', destroy_all_emails_path, :class => 'badge', :method => :put, data: { confirm: 'Are you sure? Messages cannot be recovered.' } %></br>
-<% end %>
+  </div>
+  <div class="col-md-6">
+     <div class="form-group">
+
+   	<%= form_tag emails_path, :method => 'get', remote: true, :id => "email_search" do %>
+
+   			<%= text_field_tag :search,  params[:search], :placeholder => 'Search From, Subject, or Body, Hit Enter To Search', :class => 'form-control' %>
+
+   	<% end %>
+     </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="pull-right">
+      <%= link_to 'Burn Email Address', burn_it_emails_path, :class => 'btn btn-warning btn-sm', :method => :put, data: { confirm: 'Are you sure you want to burn your email address?' } %>
+      <% unless @emails.empty? %>
+      <%= link_to 'Clear Inbox', destroy_all_emails_path, :class => 'btn btn-danger btn-sm', :method => :put, data: { confirm: 'Are you sure? Messages cannot be recovered.' } %></br>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Received</th>
+      <th>Subject</th>
       <th>From</th>
       <th>To</th>
-      <th>Subject</th>
       <th>Controls</th>
     </tr>
   </thead>
@@ -23,10 +52,13 @@ Your burn email is: <div id="burn_email"><%= current_user.burn_email %></div> La
     <% @emails.each do |e| %>
       <tr>
         <td><%= e.created_at.strftime("%m/%d/%y-%H:%M(UTC)") %></td>
+        <td><%= link_to e.subject, email_path(e.id) %></td>
         <td><%= e.from_email %></td>
         <td><%= e.to_email %></td>
-        <td><%= link_to e.subject, email_path(e.id) %></td>
-        <td><%= link_to 'Destroy', { action: :destroy, id: e.id }, method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'badge' %></td>
+        <td><%= link_to email_path(e.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-link' do %>
+          <i class="fa fa-trash fa-1x"></i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

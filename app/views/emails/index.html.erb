@@ -1,6 +1,4 @@
-<div id="search">
-  <%= render "search" %>
-</div>
+
 <div id="emails">
   <%= render "emails" %>
 </div>
@@ -9,6 +7,6 @@
   $(function() {
     setInterval(function(){
       $.getScript("/emails")
-    }, 10000);
+    }, 30000);
   });
 </script>

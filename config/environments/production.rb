@@ -84,5 +84,5 @@ Rails.application.configure do
     :port                 => 25,
     :openssl_verify_mode => 'none'
   }
-  config.action_mailer.default_url_options = { :host => 'https://burnonce.com' }
+  config.action_mailer.default_url_options = { :host => 'http://burnonce.com' }
 end

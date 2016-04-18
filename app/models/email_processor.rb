@@ -11,6 +11,7 @@ class EmailProcessor
     #log = Logger.new("#{log_dir}/griddler#{Time.now.strftime("%m-%d-%Y")}.log")
     #log.info "body: #{@body} from: #{@from} to: #{@to} subject: #{@subject}"
     u = User.find_by(burn_email: @to)
-    e = u.emails.create!(user_id: "1", from_email: @from, to_email: @to, subject: @subject, body: @body)
+    e = u.emails.create!(user_id: u.id, from_email: @from, to_email: @to, subject: @subject, body: @body)
+    EmailMailer.notify(e).deliver_now
   end
 end

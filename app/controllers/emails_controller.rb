@@ -22,6 +22,6 @@ class EmailsController < ApplicationController
 
   def burn_it
      current_user.generate_burn_email
-     redirect_to emails_path, notice: "You now have a new email address, enjoy!"
+     redirect_to emails_path, notice: "You now have a new email address, enjoy it while it lasts!"
   end
 end

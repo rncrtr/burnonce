@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
 
   def generate_burn_email
     chars = Array('a'..'z')
-    domain = ["@burnonce.xyz", "@burnonce.com"]
+    domain = ["@burnonce.xyz", "@burnonce.com", "@burnonce.tech"]
     self.burn_email = Array.new(10) { chars.sample }.join + "#{domain.sample}"
     self.last_burn = Time.zone.now
     self.save

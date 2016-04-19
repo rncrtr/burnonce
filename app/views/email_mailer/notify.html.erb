@@ -1,5 +1,5 @@
 You have a new email from: <%= @email.from_email %>
 <hr>
-<%= @email.body %>
+Read it at: <%= link_to 'Click to Read', "#{emails_url}/#{@email.id}" %>
 <hr>
 Sent from: <a href="https://burnonce.com">https://burnonce.com</a>

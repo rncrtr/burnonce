@@ -57,7 +57,9 @@
         <td><%= link_to e.subject, email_path(e.id) %></td>
         <td><%= e.from_email %></td>
         <td><%= e.to_email %></td>
-        <td><%= link_to email_path(e.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-link' do %>
+        <td><%= link_to email_path(e.id), class: 'btn btn-link' do %>
+          <i class="fa fa-envelope fa-1x"></i>
+          <% end %> <%= link_to email_path(e.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-link' do %>
           <i class="fa fa-trash fa-1x"></i>
           <% end %>
         </td>

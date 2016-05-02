@@ -1,34 +1,24 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %><h6>A valid email must be entered, you will recieve a confirmation email upon signup.  Check your spam folders</h6>
-  </div>
-
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="container">
+    <div class="row">
+        <h3 class="col-sm-offset-3 col-sm-6">Welcome to YouSpoof.Us</h3>
+    </div
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-2">
+        </div>
+        <div class="col-sm-6">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+                <div class="row">
+                      <div class="col-xs-12 col-md-12">
+                          <%= f.text_field :username, class: 'form-control input-lg', placeholder: 'Username' %>
+                        </div>
+                </div>
+                <%= f.email_field :email, autofocus: true, class: 'form-control input-lg', placeholder: 'Your valid email address. A confirmation will be sent here' %><%= f.password_field :password, autocomplete: "off", class: 'form-control input-lg', placeholder: 'Enter Password' %><%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control input-lg', placeholder: 'Confirm Password' %>
+                    <br />
+                <span class="help-block">You must enter a valid email address as a confirmation link will be sent to verify your account.</span>
+                <%= f.submit "Create my account", class: 'btn btn-lg btn-primary btn-block signup-btn' %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<%= form_for(@email, url: '/emails', method: :post) do |f|  %>
+From: <%= f.text_field :from_email %></br>
+To: <%= f.text_field :to_email %></br>
+Subject <%= f.text_field :subject %></br>
+Body: <%= f.text_area :body %></br>
+<%= f.button "Send", class: 'btn btn-info', data: {disable_with: "<i class='icon-spinner'></i>Sending..."} %>
+<% end %>

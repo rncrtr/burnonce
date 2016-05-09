@@ -5,3 +5,6 @@
 <h4>Message:</h4>
 <%= htmlify(@email.body) %></br>
 <%= link_to 'Destroy', { action: :destroy, id: @email.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge' %>
+<%= link_to email_path(@email.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-link' do %>
+<i class="fa fa-trash fa-1x"></i>
+<% end %>

@@ -18,7 +18,7 @@ class Email < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('from_email ILIKE ? OR subject ILIKE ? OR body ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+      where('from_email ILIKE ? OR to_email ILIKE ? OR subject ILIKE ? OR body ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     else
       all
     end

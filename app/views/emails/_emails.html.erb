@@ -61,9 +61,11 @@
         <td><%= link_to email_path(e.id), class: 'btn btn-link' do %>
           <i class="fa fa-envelope fa-1x"></i>
           <% end %>
+          <% if e.from_email != current_user.burn_email %>
           <%= link_to reply_email_path(e.id), class: 'btn btn-link' do %>
             <i class="fa fa-mail-reply  fa-1x"></i>
             <% end %>
+          <% end %>
            <%= link_to email_path(e.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-link' do %>
           <i class="fa fa-trash fa-1x"></i>
           <% end %>

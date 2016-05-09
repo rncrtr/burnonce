@@ -16,7 +16,7 @@
 
    	<%= form_tag emails_path, :method => 'get', remote: true, :id => "email_search" do %>
 
-   			<%= text_field_tag :search,  params[:search], :placeholder => 'Search From, Subject, or Body, Hit Enter To Search', :class => 'form-control' %>
+   			<%= text_field_tag :search,  params[:search], :placeholder => 'Search From, Subject, To, or Body, Hit Enter To Search', :class => 'form-control' %>
 
    	<% end %>
     <%= link_to 'Clear Search', emails_path, remote: true %>

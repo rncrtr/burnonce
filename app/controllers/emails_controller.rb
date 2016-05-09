@@ -31,7 +31,7 @@ class EmailsController < ApplicationController
       user_id: original_email.user_id,
       from_email: original_email.to_email,
       to_email: original_email.from_email,
-      subject: original_email.body,
+      subject: original_email.subject,
       body: original_email.body
     )
   end

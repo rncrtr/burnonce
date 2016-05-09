@@ -26,6 +26,7 @@
 
   <div class="col-md-3">
     <div class="pull-right">
+      <%= link_to 'New Email', new_email_path, :class => 'btn btn-primary btn-sm' %>
       <%= link_to 'Burn Email Address', burn_it_emails_path, :class => 'btn btn-warning btn-sm', :method => :put, data: { confirm: 'Are you sure you want to burn your email address?' } %>
       <% unless @emails.empty? %>
       <%= link_to 'Clear Inbox', destroy_all_emails_path, :class => 'btn btn-danger btn-sm', :method => :put, data: { confirm: 'Are you sure? Messages cannot be recovered.' } %></br>

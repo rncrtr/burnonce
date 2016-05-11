@@ -5,7 +5,7 @@
             <div class="form-group">
               <%= f.label :from %>
               <%= current_user.burn_email %>
-              <%= f.hidden_field :from_email, value: "#{current_user.burn_email}", class: "form-control" %>
+              <%= f.hidden_field :from_email, value: current_user.burn_email, class: "form-control" %>
             </div>
           </div>
           <div class="col-sm-6">

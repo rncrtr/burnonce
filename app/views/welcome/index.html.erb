@@ -5,3 +5,7 @@
   <p>Join <%= User.count + 1023 %> happy users today!</p>
   <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-lg' %> <%= link_to "Login", new_user_session_path, class: 'btn btn-success btn-lg' %>
 </div>
+<center>
+  <%= link_to 'Acceptable Use Policy', pages_acceptable_use_policy_path, :target => '_blank' %>
+  <%= link_to 'Terms of Service', pages_terms_of_service_path, :target => '_blank' %>
+</center>

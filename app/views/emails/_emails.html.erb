@@ -16,14 +16,17 @@
 
    	<%= form_tag emails_path, :method => 'get', remote: true, :id => "email_search" do %>
 
-   			<%= text_field_tag :search,  params[:search], :placeholder => 'Search From, Subject, or Body, Hit Enter To Search', :class => 'form-control' %>
+   			<%= text_field_tag :search,  params[:search], :placeholder => 'Search From, Subject, To, or Body, Hit Enter To Search', :class => 'form-control' %>
 
    	<% end %>
+    <%= link_to 'Clear Search', emails_path, remote: true %>
      </div>
+
   </div>
 
   <div class="col-md-3">
     <div class="pull-right">
+      <%= link_to 'New Email', new_email_path, :class => 'btn btn-primary btn-sm' %>
       <%= link_to 'Burn Email Address', burn_it_emails_path, :class => 'btn btn-warning btn-sm', :method => :put, data: { confirm: 'Are you sure you want to burn your email address?' } %>
       <% unless @emails.empty? %>
       <%= link_to 'Clear Inbox', destroy_all_emails_path, :class => 'btn btn-danger btn-sm', :method => :put, data: { confirm: 'Are you sure? Messages cannot be recovered.' } %></br>
@@ -55,7 +58,15 @@
         <td><%= link_to e.subject, email_path(e.id) %></td>
         <td><%= e.from_email %></td>
         <td><%= e.to_email %></td>
-        <td><%= link_to email_path(e.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-link' do %>
+        <td><%= link_to email_path(e.id), class: 'btn btn-link' do %>
+          <i class="fa fa-envelope fa-1x"></i>
+          <% end %>
+          <% if e.from_email != current_user.burn_email %>
+          <%= link_to reply_email_path(e.id), class: 'btn btn-link' do %>
+            <i class="fa fa-mail-reply  fa-1x"></i>
+            <% end %>
+          <% end %>
+           <%= link_to email_path(e.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-link' do %>
           <i class="fa fa-trash fa-1x"></i>
           <% end %>
         </td>

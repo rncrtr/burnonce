@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   mount_griddler
   resources :emails do
+    member do
+      get 'reply'
+    end
     collection do
       put 'destroy_all'
       put 'burn_it'

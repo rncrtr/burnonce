@@ -1,4 +1,14 @@
-<%= @email.subject %></br>
-<%= @email.to_email %></br>
+<hr>
+<h4>From: <%= @email.from_email %> To: <%= @email.to_email %></h4></br>
+<h4>Subject: <%= @email.subject %></h4>
+<hr>
+<h4>Message:</h4>
 <%= htmlify(@email.body) %></br>
-<%= link_to 'Destroy', { action: :destroy, id: @email.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge' %>
+<%= link_to email_path(@email.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-link' do %>
+<i class="fa fa-trash fa-1x"></i>
+<% end %>
+<% if @email.from_email != current_user.burn_email %>
+<%= link_to reply_email_path(@email.id), class: 'btn btn-link' do %>
+  <i class="fa fa-mail-reply  fa-1x"></i>
+  <% end %>
+<% end %>

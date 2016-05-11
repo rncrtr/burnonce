@@ -1,0 +1,36 @@
+<%= form_for(@email, url: '/emails', method: :post) do |f|  %>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%#= f.label :from %>
+            <%= f.hidden_field :from_email, value: current_user.burn_email, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= f.label :to %>
+            <%= f.text_field :to_email, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= f.label :body %>
+            <%= f.text_area :body, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= f.label :subject %>
+            <%= f.text_area :subject, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <%= f.button "Send", class: 'btn btn-primary btn-lg btn-block', data: {disable_with: "<i class='icon-spinner'></i>Sending..."} %>
+        </div>
+      </div>
+      <% end %>

@@ -47,6 +47,8 @@ gem 'clipboard-rails', :github => "shakycode/clipboard-rails"
 gem 'jquery-turbolinks'
 #Donations are costly
 gem 'stripe'
+#Friendly URLs for blog posts
+gem 'friendly_id', '~> 5.1.0'
 
 
 

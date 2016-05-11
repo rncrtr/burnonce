@@ -4,7 +4,9 @@
         <div class="col-sm-6">
           <div class="form-group">
             <%= f.label :from %>
-            <%= f.text_field :from_email, value: "#{current_user.burn_email}", class: "form-control" %>
+            <%= current_user.burn_email %>
+            <%= f.hidden_field :from_email, value: "#{current_user.burn_email}", class: "form-control" %>
+          </div>
           </div>
         </div>
         <div class="col-sm-6">

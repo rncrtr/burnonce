@@ -1,4 +1,4 @@
 <h3>Burnonce Blog...</h3>
 <% @blogs.each do |b| %>
-<h4><%= link_to b.title, blog_path(b) %></h4>
+<h4><%= link_to htmlify(b.title), blog_path(b) %></h4>
 <% end %>

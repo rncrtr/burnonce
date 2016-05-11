@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<p>Welcome <%= @email %> to Grubs.xyz!</p>
+
+<p>You are about to setup your account and enable anonymous, private, disposable email!</p>
 
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', user_confirmation_url(confirmation_token: @token) %></p>
+<hr>
+<h5>Thanks for signing up, we hope you enjoy the service!</h5>
+<a href="https://burnonce.com/">Sent from https://burnonce.com/</a>

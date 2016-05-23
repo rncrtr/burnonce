@@ -1,14 +1,28 @@
-<hr>
-<h4>From: <%= @email.from_email %> To: <%= @email.to_email %></h4></br>
-<h4>Subject: <%= @email.subject %></h4>
-<hr>
-<h4>Message:</h4>
-<%= htmlify(@email.body) %></br>
-<%= link_to email_path(@email.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-link' do %>
-<i class="fa fa-trash fa-1x"></i>
-<% end %>
-<% if @email.from_email != current_user.burn_email %>
-<%= link_to reply_email_path(@email.id), class: 'btn btn-link' do %>
-  <i class="fa fa-mail-reply  fa-1x"></i>
-  <% end %>
-<% end %>
+<div class="well well-sm message-well">
+	<div class="row">
+		<div class="col-sm-12">
+			<h4 style="margin-top: 0px;"><strong><%= @email.subject %></strong></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			From: <%= @email.from_email %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			To: <%= @email.to_email %>
+		</div>
+	</div>
+	<div class="well well-lg">
+		<%= htmlify(@email.body) %>
+	</div>
+	<%= link_to email_path(@email.id), method: :delete, data: { confirm: 'Are you sure? Messages cannot be recovered.' }, class: 'btn btn-primary' do %>
+	<i class="fa fa-trash fa-1x"></i> Delete
+	<% end %>
+	<% if @email.from_email != current_user.burn_email %>
+	<%= link_to reply_email_path(@email.id), class: 'btn btn-primary' do %>
+	  <i class="fa fa-mail-reply  fa-1x"></i> Reply
+	  <% end %>
+	<% end %>
+</div>

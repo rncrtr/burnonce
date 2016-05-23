@@ -1,33 +1,34 @@
   <%= form_for(@email, url: '/emails', method: :post) do |f|  %>
 
+        <!-- TO -->
         <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <%#= f.label :from %>
-              <%= f.hidden_field :from_email, value: current_user.burn_email, class: "form-control" %>
-            </div>
-          </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 col-sm-offset-3">
             <div class="form-group">
               <%= f.label :to %>
               <%= f.text_field :to_email, placeholder: "john@example.com", class: "form-control" %>
+              <%= f.hidden_field :from_email, value: current_user.burn_email, class: "form-control" %>
             </div>
           </div>
         </div>
+        <!-- SUBJECT -->
         <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <%= f.label :body %>
-              <%= f.text_area :body, placeholder: "Enter your message here", class: "form-control" %>
-            </div>
-          </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 col-sm-offset-3">
             <div class="form-group">
               <%= f.label :subject %>
               <%= f.text_field :subject, placeholder: "Your Subject Here", class: "form-control" %>
             </div>
           </div>
         </div>
+        <!-- BODY -->
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-group">
+              <%= f.label :body %>
+              <%= f.text_area :body, placeholder: "Enter your message here", class: "form-control", :rows => "10" %>
+            </div>
+          </div>  
+        </div>
+        <!-- SEND -->
         <div class="row">
           <div class="col-sm-4 col-sm-offset-4">
               <%= f.button "Send", class: 'btn btn-primary btn-lg btn-block', data: {disable_with: "<i class='icon-spinner'></i>Sending..."} %>
